@@ -1,0 +1,7 @@
+## Interface: 20400
+## Title: Grift
+## Notes: The greatest grift of all time
+## Author: yamjamflimflam
+## SavedVariables: GriftSavedVars
+Grift.lua
+Grift.xml

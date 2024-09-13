@@ -1,0 +1,252 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ 
+    ..\..\FrameXML\UI.xsd">
+	<!-- **** Includes **** -->
+	<Include file="Templates.xml"/>
+	<Script File="Grift.lua"/>
+	<!-- **** some frame for onLoad **** -->
+	<Frame name="OnLoadFrame">
+		<Scripts>
+			<OnLoad>
+				Grift:OnLoad();
+			</OnLoad>
+			<OnEvent>
+				Grift.OnEvent(event, ...);
+			</OnEvent>
+		</Scripts>
+	</Frame>
+	<!-- **** main frame **** -->
+	<Frame name="GriftMainFrame" toplevel="true" parent="UIParent" enableMouse="true" hidden="true" frameStrata="DIALOG">
+		<Scripts>
+			<OnLoad>
+				Grift:MainFrameOnLoad();
+			</OnLoad>
+			<OnShow>
+				Grift:MainFrameOnShow();
+			</OnShow>
+			<OnHide>
+				Grift:MainFrameOnHide();
+			</OnHide>
+		</Scripts>
+		<Size>
+			<AbsDimension x="384" y="512"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset>
+					<AbsDimension x="0" y="-104"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<HitRectInsets>
+			<AbsInset left="0" right="30" top="0" bottom="45"/>
+		</HitRectInsets>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture file="Interface\AddOns\Grift\grift-icon">
+					<Size>
+						<AbsDimension x="60" y="60"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="7" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture name="GriftMainFrameTopLeft" file="Interface\PaperDollInfoFrame\UI-Character-General-TopLeft">
+					<Size>
+						<AbsDimension x="256" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="GriftMainFrameTopRight" file="Interface\PaperDollInfoFrame\UI-Character-General-TopRight">
+					<Size>
+						<AbsDimension x="128" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="GriftMainFrameBottomLeft" file="Interface\FriendsFrame\UI-FriendsFrame-BotLeft">
+					<Size>
+						<AbsDimension x="256" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="GriftMainFrameBottomRight" file="Interface\FriendsFrame\UI-FriendsFrame-BotRight">
+					<Size>
+						<AbsDimension x="128" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="GriftMainFrameTitleText" inherits="GameFontNormal">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="GriftSettingsFrame" hidden="true" setAllPoints="true">
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="GriftSettingsFrameDescription" inherits="GameFontNormal" justifyH="LEFT" text=" ">
+							<Size>
+								<AbsDimension x="310" y="0"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOP" relativeTo="$parent" relativePoint="TOP">
+									<Offset>
+										<AbsDimension x="0" y="-180"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="1.0" g="1.0" b="1.0"/>
+						</FontString>
+					</Layer>
+
+				</Layers>
+				<Frames>
+					<!-- Buttons at the Bottom Page -->
+					<Button name="GriftSettingsFrameButton1" inherits="UIPanelButtonTemplate">
+						<Size><AbsDimension x="131" y="21"/></Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="GriftSettingsFrame">
+								<Offset><AbsDimension x="17" y="107"/></Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<!-- <Button name="GriftSettingsFrameButton2" inherits="UIPanelButtonTemplate"> -->
+						<!-- <Size><AbsDimension x="131" y="21"/></Size> -->
+						<!-- <Anchors> -->
+							<!-- <Anchor point="TOP" relativeTo="GriftSettingsFrameButton1" relativePoint="BOTTOM"> -->
+								<!-- <Offset><AbsDimension x="0" y="-5"/></Offset> -->
+							<!-- </Anchor> -->
+						<!-- </Anchors> -->
+					<!-- </Button> -->
+					<Button name="GriftSettingsFrameButton3" inherits="UIPanelButtonTemplate">
+						<Size><AbsDimension x="131" y="21"/></Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="GriftSettingsFrameButton1" relativePoint="RIGHT">
+								<Offset><AbsDimension x="66" y="0"/></Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<!-- <Button name="GriftSettingsFrameButton4" inherits="UIPanelButtonTemplate"> -->
+						<!-- <Size><AbsDimension x="131" y="21"/></Size> -->
+						<!-- <Anchors> -->
+							<!-- <Anchor point="TOP" relativeTo="GriftSettingsFrameButton3" relativePoint="BOTTOM"> -->
+								<!-- <Offset><AbsDimension x="0" y="-5"/></Offset> -->
+							<!-- </Anchor> -->
+						<!-- </Anchors> -->
+					<!-- </Button> -->
+				</Frames>
+			</Frame>
+			<!-- close button, top right -->
+			<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-30" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<!-- slider settings -->
+			<Slider name="$parentDifficultySlider" inherits="GriftSliderTemplate" minValue="1" maxValue="3" valueStep="1">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="100" y="-130"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnShow>
+						getglobal(this:GetName().."Title"):SetText("Difficulty");
+						this:SetValue(Grift.Settings.Difficulty);
+						getglobal(this:GetName().."Value"):SetText(this:GetValue());
+					</OnShow>
+					<OnValueChanged>
+						getglobal(this:GetName().."Value"):SetText(this:GetValue());
+						Grift.Settings.Difficulty = this:GetValue();
+					</OnValueChanged>
+				</Scripts>
+			</Slider>
+			<Slider name="$parentStyleSlider" inherits="GriftSliderTemplate" minValue="1" maxValue="7" valueStep="1">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentDifficultySlider" relativePoint="TOPLEFT">
+						<Offset><AbsDimension x="0" y="-15"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnShow>
+						getglobal(this:GetName().."Title"):SetText("Style");
+						this:SetValue(Grift.Settings.Style);
+						getglobal(this:GetName().."Value"):SetText(this:GetValue());
+					</OnShow>
+					<OnValueChanged>
+						getglobal(this:GetName().."Value"):SetText(this:GetValue());
+						Grift.Settings.Style = this:GetValue();
+					</OnValueChanged>
+				</Scripts>
+			</Slider>
+		</Frames>
+	</Frame>
+	<!-- Minimap button -->
+	<!-- <Button name="GriftMinimapButton" parent="Minimap" hidden="false" frameStrata="MEDIUM"> -->
+		<!-- <Size> -->
+			<!-- <AbsDimension x="32" y="32"/> -->
+		<!-- </Size> -->
+		<!-- <Scripts> -->
+			<!-- <OnLoad> -->
+				<!-- GriftMinimapButton:Show(); -->
+			<!-- </OnLoad> -->
+			<!-- <OnEnter> -->
+				<!-- GameTooltip_SetDefaultAnchor(GameTooltip, UIParent); -->
+				<!-- GameTooltip:SetText("Grift"); -->
+			<!-- </OnEnter> -->
+			<!-- <OnLeave> -->
+				<!-- GameTooltip:Hide(); -->
+			<!-- </OnLeave> -->
+		<!-- </Scripts> -->
+		<!-- <NormalTexture file="Interface\AddOns\Grift\grift-icon"/> -->
+		<!-- <PushedTexture file="Interface\AddOns\Grift\grift-icon"/> -->
+		<!-- <HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/> -->
+	<!-- </Button>	 -->
+</Ui>
+
+
