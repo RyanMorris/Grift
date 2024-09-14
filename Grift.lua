@@ -104,9 +104,9 @@ function Grift:MainFrameUpdate()
 	GriftSettingsFrameButton1:SetScript("OnClick", function() Grift:SendSet(); end);
 	GriftSettingsFrameButton1:Enable();
 	
-	-- GriftSettingsFrameButton2:SetText("Check");
-	-- GriftSettingsFrameButton2:SetScript("OnClick", function() Grift:SendCheck(); end);
-	-- GriftSettingsFrameButton2:Enable();
+	GriftSettingsFrameButton2:SetText("No Scaling");
+	GriftSettingsFrameButton2:SetScript("OnClick", function() Grift:RemoveScaling(); end);
+	GriftSettingsFrameButton2:Enable();
 	
 	GriftSettingsFrameButton3:SetText("Check");
 	GriftSettingsFrameButton3:SetScript("OnClick", function() Grift:SendCheck(); end);
@@ -146,6 +146,11 @@ end
 function Grift:SendCheck()
 	GPrint("Checking current settings...", 1.0, 1.0, 0.5);
 	SendChatMessage(".gr c", "SAY");
+end
+
+function Grift:RemoveScaling()
+	GPrint("Removing scaling, keeping settings...", 1.0, 1.0, 0.5);
+	SendChatMessage(string.format(".ishd s %d %d", 1.0, 1.0), "SAY");
 end
 
 function Grift:MinimapButtonOnClick()

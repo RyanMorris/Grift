@@ -149,14 +149,14 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<!-- <Button name="GriftSettingsFrameButton2" inherits="UIPanelButtonTemplate"> -->
-						<!-- <Size><AbsDimension x="131" y="21"/></Size> -->
-						<!-- <Anchors> -->
-							<!-- <Anchor point="TOP" relativeTo="GriftSettingsFrameButton1" relativePoint="BOTTOM"> -->
-								<!-- <Offset><AbsDimension x="0" y="-5"/></Offset> -->
-							<!-- </Anchor> -->
-						<!-- </Anchors> -->
-					<!-- </Button> -->
+					<Button name="GriftSettingsFrameButton2" inherits="UIPanelButtonTemplate">
+						<Size><AbsDimension x="131" y="21"/></Size>
+						<Anchors>
+							<Anchor point="TOP" relativeTo="GriftSettingsFrameButton1" relativePoint="BOTTOM">
+								<Offset><AbsDimension x="0" y="-5"/></Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
 					<Button name="GriftSettingsFrameButton3" inherits="UIPanelButtonTemplate">
 						<Size><AbsDimension x="131" y="21"/></Size>
 						<Anchors>
