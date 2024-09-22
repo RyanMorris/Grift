@@ -7,10 +7,9 @@ Grift.Settings = {
 };
 
 GRIFT_DESCRIPTION = {
-	"3 difficulties:",
-	"1 is easiest, 3 is hardest.",
+	"4 difficulties:",
+	"1 is easiest, 4 is hardest.",
 	"Harder difficulties give more rewards.",
-	"(soon)",
 	"",
 	"7 styles",
 	"1 is least risky, 7 is most risky.",

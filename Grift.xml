@@ -186,7 +186,7 @@
 				</Anchors>
 			</Button>
 			<!-- slider settings -->
-			<Slider name="$parentDifficultySlider" inherits="GriftSliderTemplate" minValue="1" maxValue="3" valueStep="1">
+			<Slider name="$parentDifficultySlider" inherits="GriftSliderTemplate" minValue="1" maxValue="4" valueStep="1">
 				<Anchors>
 					<Anchor point="TOPLEFT">
 						<Offset>
@@ -209,7 +209,7 @@
 			<Slider name="$parentStyleSlider" inherits="GriftSliderTemplate" minValue="1" maxValue="7" valueStep="1">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentDifficultySlider" relativePoint="TOPLEFT">
-						<Offset><AbsDimension x="0" y="-15"/></Offset>
+						<Offset><AbsDimension x="0" y="-20"/></Offset>
 					</Anchor>
 				</Anchors>
 				<Scripts>
