@@ -4,6 +4,7 @@ Grift = {};
 Grift.Settings = {
 	["Difficulty"] = 1,
 	["Style"] = 1,
+	["Instance"] = 1,
 };
 
 GRIFT_DESCRIPTION = {
@@ -15,6 +16,10 @@ GRIFT_DESCRIPTION = {
 	"1 is least risky, 7 is most risky.",
 	"Risky meaning enemies deal more",
 	"damage, but have less health.",
+	"",
+	"4 instance types",
+	"1 normal, 2 heroic,",
+	"3 10 man, 4 25 man.",
 };
 
 GriftSavedVars = {
@@ -48,12 +53,9 @@ function Grift:OnLoad()
 end
 
 function Grift.OnEvent(event, ...)
-	--GPrint("Grift:OnEvent()", 1.0, 1.0, 0.5);
 	if (event == "VARIABLES_LOADED") then
-		--GPrint("Grift:OnEvent() VARIABLES_LOADED", 1.0, 1.0, 0.5);
 		Grift:LoadVars();
 	elseif (event == "PLAYER_LEAVING_WORLD") then -- PLAYER_LOGOUT seems to be fired after saving of variables in same cases (?)
-		--GPrint("Grift:OnEvent() PLAYER_LEAVING_WORLD", 1.0, 1.0, 0.5);
 		GriftSavedVars.Settings = Grift.Settings;
 	end
 end
@@ -70,18 +72,15 @@ function Grift:MainFrameOnLoad()
 	end
 	
 	Grift:MainFrameUpdate();
-	--GPrint("Grift:MainFrameOnLoad() END", 1.0, 1.0, 0.5);
 end
 
 function Grift:MainFrameOnShow()
-	--GPrint("Grift:MainFrameOnShow()", 1.0, 1.0, 0.5);
 	Grift:MainFrameUpdate();
 	UpdateMicroButtons();
 	PlaySound("igMainMenuOpen");
 end
 
 function Grift:MainFrameOnHide()
-	--GPrint("Grift:MainFrameOnHide()", 1.0, 1.0, 0.5);
 	UpdateMicroButtons();
 	PlaySound("igMainMenuClose");
 	getglobal("GriftSettingsFrame"):Hide();
@@ -138,8 +137,9 @@ end
 function Grift:SendSet()
 	local difficulty = Grift.Settings.Difficulty;
 	local style = Grift.Settings.Style;
+	local instance = Grift.Settings.Instance;
 	GPrint("Sending new settings...", 1.0, 1.0, 0.5);
-	SendChatMessage(string.format(".gr s %d %d", difficulty, style), "SAY");
+	SendChatMessage(string.format(".gr s %d %d %d", difficulty, style, instance), "SAY");
 end
 
 function Grift:SendCheck()

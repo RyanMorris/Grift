@@ -130,7 +130,7 @@
 							<Anchors>
 								<Anchor point="TOP" relativeTo="$parent" relativePoint="TOP">
 									<Offset>
-										<AbsDimension x="0" y="-180"/>
+										<AbsDimension x="0" y="-200"/>
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -221,6 +221,24 @@
 					<OnValueChanged>
 						getglobal(this:GetName().."Value"):SetText(this:GetValue());
 						Grift.Settings.Style = this:GetValue();
+					</OnValueChanged>
+				</Scripts>
+			</Slider>
+			<Slider name="$parentInstanceSlider" inherits="GriftSliderTemplate" minValue="1" maxValue="4" valueStep="1">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentStyleSlider" relativePoint="TOPLEFT">
+						<Offset><AbsDimension x="0" y="-20"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnShow>
+						getglobal(this:GetName().."Title"):SetText("Instance Type");
+						this:SetValue(Grift.Settings.Instance);
+						getglobal(this:GetName().."Value"):SetText(this:GetValue());
+					</OnShow>
+					<OnValueChanged>
+						getglobal(this:GetName().."Value"):SetText(this:GetValue());
+						Grift.Settings.Instance = this:GetValue();
 					</OnValueChanged>
 				</Scripts>
 			</Slider>
